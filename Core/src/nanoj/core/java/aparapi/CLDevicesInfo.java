@@ -1,8 +1,8 @@
 package nanoj.core.java.aparapi;
 
-import com.amd.aparapi.device.Device;
-import com.amd.aparapi.device.OpenCLDevice;
-import com.amd.aparapi.internal.opencl.OpenCLPlatform;
+import com.aparapi.device.Device;
+import com.aparapi.device.OpenCLDevice;
+import com.aparapi.internal.opencl.OpenCLPlatform;
 import ij.IJ;
 import ij.Prefs;
 import nanoj.updater.java.Path;

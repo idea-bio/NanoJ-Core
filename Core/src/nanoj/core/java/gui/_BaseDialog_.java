@@ -1,8 +1,6 @@
 package nanoj.core.java.gui;
 
-import com.boxysystems.jgoogleanalytics.FocusPoint;
-import com.boxysystems.jgoogleanalytics.JGoogleAnalyticsTracker;
-import com.boxysystems.jgoogleanalytics.LoggingAdapter;
+
 import ij.IJ;
 import ij.ImagePlus;
 import ij.WindowManager;
@@ -54,8 +52,7 @@ public abstract class _BaseDialog_ extends Thread implements PlugIn {
     protected String arg;
 
     protected Log log = new Log();
-    protected JGoogleAnalyticsTracker tracker = new JGoogleAnalyticsTracker("NanoJ-Core", headlessGetVersionSmall(), "UA-61590656-3");
-    protected FocusPoint parentFocusPoint;
+
 
     protected long typingWaitDelay = 500;
 
@@ -167,28 +164,6 @@ public abstract class _BaseDialog_ extends Thread implements PlugIn {
     }
 
     private boolean showAndAcceptAnnouncements() {
-        boolean isNewVersion = isNewVersion();
-        boolean isNewUser = prefs.isNewUser();
-
-        tracker.setLoggingAdapter(new SystemOutLogger());
-        String trackLabel = getClassName();
-        if (trackLabel.contains("."))
-            trackLabel = trackLabel.substring(trackLabel.lastIndexOf(".")+1, trackLabel.length());
-        track(trackLabel);
-        //track("NewCall");
-
-        if (isNewUser) this.track("NewUser");
-        if (isNewVersion) this.track("NewVersion");
-
-        if (isNewVersion || prefs.showWhatsNew()) {
-            NonBlockingGenericDialog gd_whatsNew = new NonBlockingGenericDialog("What's new...");
-            gd_whatsNew.addMessage(getWhatsNew());
-            gd_whatsNew.addCheckbox("Don't show again...", false);
-            gd_whatsNew.showDialog();
-            if (gd_whatsNew.wasCanceled()) return false;
-            boolean agreed = gd_whatsNew.getNextBoolean();
-            if (agreed) prefs.setShowWhatsNew(false);
-        }
 
         return true;
     }
@@ -370,20 +345,7 @@ public abstract class _BaseDialog_ extends Thread implements PlugIn {
     }
 
     protected void track(String value) {
-        if (parentFocusPoint==null) parentFocusPoint = new FocusPoint(getClassName());
-        FocusPoint focus = new FocusPoint(value);
-        focus.setParentTrackPoint(parentFocusPoint);
-        tracker.trackAsynchronously(focus);
+
     }
 }
 
-class SystemOutLogger implements LoggingAdapter {
-    @Override
-    public void logError(String s) {
-        //System.out.println("errorMessage=" + s);
-    }
-    @Override
-    public void logMessage(String s) {
-        //System.out.println(s);
-    }
-}

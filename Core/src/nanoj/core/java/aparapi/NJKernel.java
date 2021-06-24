@@ -1,7 +1,7 @@
 package nanoj.core.java.aparapi;
 
-import com.amd.aparapi.Kernel;
-import com.amd.aparapi.Range;
+import com.aparapi.Kernel;
+import com.aparapi.Range;
 import ij.Prefs;
 import nanoj.core.java.tools.Log;
 

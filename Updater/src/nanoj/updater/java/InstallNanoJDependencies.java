@@ -1,6 +1,6 @@
 package nanoj.updater.java;
 
-import com.amd.aparapi.Kernel;
+import com.aparapi.Kernel;
 import ij.IJ;
 
 import java.io.File;
@@ -27,6 +27,20 @@ public class InstallNanoJDependencies {
     public static String executionMode;
 
     public InstallNanoJDependencies() {
+        boolean isV2 = true;
+
+        if (isV2 && IJ.isWindows()){
+            installed= true;
+            Kernel kernel = new Kernel(){
+                @Override public void run(){
+                }
+            } ;
+            kernel.execute(8);
+            return ;
+
+
+        }
+
         if (installed == true) return;
         installed = installAparapi();
         Kernel kernel = new Kernel(){
@@ -36,8 +50,12 @@ public class InstallNanoJDependencies {
         kernel.execute(8);
         executionMode = ""+kernel.getExecutionMode();
     }
+    public static void main(final String[] _args) {
+        new InstallNanoJDependencies();
+    }
 
     public static boolean installAparapi() {
+
         autoSelectAparapiFiles();
 
         try {

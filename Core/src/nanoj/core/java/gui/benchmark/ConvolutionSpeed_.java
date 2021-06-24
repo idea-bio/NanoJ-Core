@@ -1,6 +1,6 @@
 package nanoj.core.java.gui.benchmark;
 
-import com.amd.aparapi.Kernel;
+import com.aparapi.Kernel;
 import ij.ImageStack;
 import ij.measure.ResultsTable;
 import ij.plugin.filter.Convolver;

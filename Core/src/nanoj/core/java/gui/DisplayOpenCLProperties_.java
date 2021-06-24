@@ -1,6 +1,6 @@
 package nanoj.core.java.gui;
 
-import com.amd.aparapi.device.Device;
+import com.aparapi.device.Device;
 import ij.Prefs;
 import ij.gui.NonBlockingGenericDialog;
 import nanoj.core.java.aparapi.CLDevice;
