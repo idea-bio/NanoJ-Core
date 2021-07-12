@@ -5,39 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdd2d11c-a008-4327-bc31-5c763a8be394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Core/resources/JLargeArrays-1.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/resources/JTransforms-3.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/resources/NanoJ_Updater.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/resources/commons-compress-1.20.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/resources/commons-lang3-3.12.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/resources/commons-math3-3.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/resources/jocl-android-2.3.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/resources/jython-standalone-2.7.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/resources/vecmath-1.6.0-scijava-2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Core/core.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/aparapi/CLDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/nanoj/core/java/aparapi/CLDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/aparapi/CLDevicesInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/nanoj/core/java/aparapi/CLDevicesInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/aparapi/CLDevicesInfoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/aparapi/MandelSample.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/nanoj/core/java/aparapi/MandelSample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/aparapi/NJKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/nanoj/core/java/aparapi/NJKernel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/array/ImageStackToFromArrayTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/array/MultidimensionalArrayIndexConversionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/gui/ChangeOpenCLDevice_.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/nanoj/core/java/gui/ChangeOpenCLDevice_.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/gui/DisplayOpenCLProperties_.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/nanoj/core/java/gui/DisplayOpenCLProperties_.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/gui/Mandelbrot_.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/nanoj/core/java/gui/Mandelbrot_.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/gui/OpenCLPreferences_.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/nanoj/core/java/gui/OpenCLPreferences_.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/gui/_BaseDialog_.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/nanoj/core/java/gui/_BaseDialog_.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/gui/benchmark/ConvolutionSpeed_.java" beforeDir="false" afterPath="$PROJECT_DIR$/Core/src/nanoj/core/java/gui/benchmark/ConvolutionSpeed_.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/image/filtering/ConvolutionKernelsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/localisation/particlesHandling/ParticlesHolderTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/localisation/peakDetection/PeakFinderTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/localisation/peakDetection/SmoothPeakFinderTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core/java/tools/math/RandomizerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/src/nanoj/core2/NanoJUsageTracker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Updater/resources/aparapi_x86.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Updater/resources/aparapi_x86.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Updater/resources/aparapi_x86_64.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Updater/resources/aparapi_x86_64.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Updater/src/nanoj/updater/java/InstallNanoJDependencies.java" beforeDir="false" afterPath="$PROJECT_DIR$/Updater/src/nanoj/updater/java/InstallNanoJDependencies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Updater/updater.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Updater/updater.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
