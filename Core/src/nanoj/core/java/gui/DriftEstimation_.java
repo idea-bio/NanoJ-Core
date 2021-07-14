@@ -166,7 +166,7 @@ public class DriftEstimation_ extends _BaseDialog_ {
     }
 
     public void runAnalysis(ImagePlus imp) throws IOException {
-
+        Boolean isHeadless = Boolean.parseBoolean(System.getProperty("java.awt.headless", "false"));
         ImageStack ims = imp.getImageStack();
         int nSlices = ims.getSize();
 
@@ -287,14 +287,14 @@ public class DriftEstimation_ extends _BaseDialog_ {
         data.put("X-Drift (pixels)", driftX);
         data.put("Y-Drift (pixels)", driftY);
 
-        if (showDriftTable) {
+        if (showDriftTable && !isHeadless) {
             ResultsTable rt = dataMapToResultsTable(data);
             rt.show("Drift-Table");
         }
         saveNanoJTable(filePath+"DriftTable.njt", getPrefs(), data);
 
         // Create drift plot
-        if (showDriftPlot) {
+        if (showDriftPlot && !isHeadless) {
             log.status("generating plots...");
 
             double[] timePoints = ArrayInitialization.initializeDoubleAndGrowthFill(nSlices, 1, 1);
@@ -314,7 +314,7 @@ public class DriftEstimation_ extends _BaseDialog_ {
         }
 
         // Show Cross-Correlation Map
-        if (showCrossCorrelationMap) {
+        if (showCrossCorrelationMap && !isHeadless) {
             ImagePlus impCCM = new ImagePlus("Average CCM", imsCCM);
 
             if (doBatch)
@@ -336,7 +336,7 @@ public class DriftEstimation_ extends _BaseDialog_ {
             }
         }
 
-        if (apply) {
+        if (apply && !isHeadless) {
             ImagePlus impDC = adc.applyDriftCorrection(imp, driftX, driftY);
             impDC.show();
 
