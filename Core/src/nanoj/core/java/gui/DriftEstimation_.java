@@ -56,7 +56,9 @@ public class DriftEstimation_ extends _BaseDialog_ {
 
     @Override
     public void setupDialog() {
-
+        Boolean isHeadless = Boolean.parseBoolean(System.getProperty("java.awt.headless", "false"));
+        if (isHeadless)
+            return;
         gd = new NonBlockingGenericDialog("Estimate Drift...");
         gd.addNumericField("Time averaging (default: 100, 1 - disables)", getPrefs("timeAveraging", 100), 0);
         gd.addNumericField("Max expected drift (pixels, 0 - auto)", getPrefs("maxExpectedDrift", 10), 0);
@@ -77,28 +79,43 @@ public class DriftEstimation_ extends _BaseDialog_ {
     @Override
     public boolean loadSettings() {
 
-        // Grab data from dialog
-        timeAveraging = (int) max(gd.getNextNumber(), 1);
-        maxExpectedDrift = (int) gd.getNextNumber();
-        refOption = gd.getNextChoiceIndex();
+        Boolean isHeadless = Boolean.parseBoolean(System.getProperty("java.awt.headless", "false"));
+        if (isHeadless){
 
-        doBatch = gd.getNextBoolean();
-        showCrossCorrelationMap = gd.getNextBoolean();
-        showDriftPlot = gd.getNextBoolean();
-        showDriftTable = gd.getNextBoolean();
-        apply = gd.getNextBoolean();
+            timeAveraging = (int)getPrefs("timeAveraging", 100);
+            maxExpectedDrift = (int)getPrefs("maxExpectedDrift", 10);
+            refOption = getPrefs("refOption", 0);
 
-        setPrefs("timeAveraging", timeAveraging);
-        setPrefs("maxExpectedDrift", maxExpectedDrift);
-        setPrefs("doBatch", doBatch);
-        setPrefs("refOption", refOption);
-        setPrefs("showCrossCorrelationMap", showCrossCorrelationMap);
-        setPrefs("showDriftPlot", showDriftPlot);
-        setPrefs("showDriftTable", showDriftTable);
-        setPrefs("showDriftTable", showDriftTable);
-        setPrefs("apply", apply);
+            doBatch = getPrefs("doBatch", false);
+            showCrossCorrelationMap = getPrefs("showCrossCorrelationMap", true);
+            showDriftPlot = getPrefs("showDriftPlot", true);
+            showDriftTable = getPrefs("showDriftTable", true);
+            apply = getPrefs("apply", false);
+        }else {
+            timeAveraging = (int) max(gd.getNextNumber(), 1);
+            maxExpectedDrift = (int) gd.getNextNumber();
+            refOption = gd.getNextChoiceIndex();
 
-        prefs.savePreferences();
+            doBatch = gd.getNextBoolean();
+            showCrossCorrelationMap = gd.getNextBoolean();
+            showDriftPlot = gd.getNextBoolean();
+            showDriftTable = gd.getNextBoolean();
+            apply = gd.getNextBoolean();
+
+            setPrefs("timeAveraging", timeAveraging);
+            setPrefs("maxExpectedDrift", maxExpectedDrift);
+            setPrefs("doBatch", doBatch);
+            setPrefs("refOption", refOption);
+            setPrefs("showCrossCorrelationMap", showCrossCorrelationMap);
+            setPrefs("showDriftPlot", showDriftPlot);
+            setPrefs("showDriftTable", showDriftTable);
+            setPrefs("showDriftTable", showDriftTable);
+            setPrefs("apply", apply);
+
+            prefs.savePreferences();
+        }
+
+
 
         return true;
     }
